@@ -7,14 +7,9 @@ from google.cloud import bigquery
 
 #Borrowing logic from Erin McMahon's code from week 3 demo discussion
 app = Flask(__name__)
-api = App(app)
+api = Api(app)
 
 client = bigquery.Client()
-
-@app.route("/")
-def hello_world():
-    name = os.environ.get("NAME", "World")
-    return "Hello {}!".format(name)
 
 @app.route("/")
 def query_data():
